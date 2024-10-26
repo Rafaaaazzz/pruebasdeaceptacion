@@ -1,0 +1,17 @@
+Feature: Programación de recolección de residuos
+  Como usuario
+  Quiero programar recolecciones de residuos
+  Para asegurarme de que mis residuos sean recogidos a tiempo
+
+  Scenario: Programación exitosa de recolección
+    Given un usuario logueado en la aplicación
+    When el usuario accede a la sección de programación de recolección
+    And selecciona una fecha y hora para la recolección de sus residuos
+    And confirma la programación
+    Then el usuario recibe una confirmación de la programación de recolección
+    And recibe un recordatorio el día antes de la recolección
+
+  Scenario: Programación fallida por fecha no disponible
+    Given un usuario logueado en la aplicación
+    When el usuario intenta programar una recolección en una fecha no disponible
+    Then el usuario recibe un mensaje de error indicando que debe elegir otra fecha
