@@ -1,0 +1,14 @@
+Feature: Notificaciones sobre eventos de reciclaje
+  Como usuario
+  Quiero recibir notificaciones sobre eventos de reciclaje cercanos
+  Para participar y aumentar mis puntos de recompensa
+
+  Scenario: Recibir notificaciones de eventos próximos
+    Given un usuario logueado que ha aceptado recibir notificaciones
+    When hay un evento de reciclaje programado cerca de su ubicación
+    Then el usuario recibe una notificación con los detalles del evento
+
+  Scenario: No recibir notificaciones si la opción está desactivada
+    Given un usuario logueado que ha desactivado las notificaciones
+    When hay un evento de reciclaje cercano
+    Then el usuario no recibe ninguna notificación
