@@ -1,0 +1,16 @@
+Feature: Inicio de sesión
+  Como usuario registrado
+  Quiero iniciar sesión
+  Para acceder a mi cuenta y gestionar mis residuos
+
+  Scenario: Inicio de sesión exitoso
+    Given un usuario registrado con email y contraseña correctos
+    When el usuario ingresa su email y contraseña
+    And hace clic en el botón de iniciar sesión
+    Then el usuario accede a su cuenta
+    And ve la página principal de la aplicación
+
+  Scenario: Inicio de sesión fallido por contraseña incorrecta
+    Given un usuario registrado
+    When el usuario ingresa una contraseña incorrecta
+    Then el usuario recibe un mensaje de error indicando que la contraseña es incorrecta
