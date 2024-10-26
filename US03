@@ -1,0 +1,15 @@
+Feature: Gestión de residuos
+  Como usuario
+  Quiero clasificar mis residuos
+  Para contribuir a un ambiente más sostenible
+
+  Scenario: Clasificación exitosa de residuos
+    Given un usuario logueado en la aplicación
+    When el usuario selecciona el tipo de residuo que desea reciclar
+    And sigue las instrucciones para la correcta disposición
+    Then el usuario recibe puntos de recompensa por reciclar correctamente
+
+  Scenario: Intento de clasificación con información insuficiente
+    Given un usuario logueado en la aplicación
+    When el usuario intenta reciclar un artículo sin etiqueta de reciclaje
+    Then el usuario recibe un mensaje solicitando más información sobre el artículo
