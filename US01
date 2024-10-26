@@ -1,0 +1,16 @@
+Feature: Registro de usuarios
+  Como usuario nuevo
+  Quiero registrarme en la aplicación
+  Para acceder a las funcionalidades de gestión de residuos
+
+  Scenario: Registro exitoso
+    Given un usuario nuevo
+    When el usuario ingresa su información válida en el formulario de registro
+    And hace clic en el botón de registro
+    Then el usuario recibe un mensaje de confirmación de registro exitoso
+    And el usuario es redirigido a la página principal de la aplicación
+
+  Scenario: Registro fallido por email ya registrado
+    Given un email que ya está registrado en la aplicación
+    When el usuario intenta registrarse con ese email
+    Then el usuario recibe un mensaje de error indicando que el email ya está registrado
