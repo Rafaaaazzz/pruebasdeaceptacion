@@ -1,0 +1,15 @@
+Feature: Consulta y edición del perfil de usuario
+  Como usuario
+  Quiero consultar y editar mi perfil
+  Para actualizar mi información personal y preferencias de reciclaje
+
+  Scenario: Consulta de perfil exitosa
+    Given un usuario logueado en la aplicación
+    When el usuario accede a su perfil
+    Then ve su información personal y preferencias de reciclaje
+
+  Scenario: Actualización exitosa del perfil
+    Given un usuario logueado en la aplicación en su perfil
+    When el usuario modifica su dirección de recolección
+    And guarda los cambios
+    Then el usuario recibe una confirmación de que su perfil ha sido actualizado
